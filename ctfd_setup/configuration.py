@@ -47,7 +47,7 @@ def get_configuration() -> Configuration:
     admin_username: Union[str, None] = os.getenv("ADMIN_USERNAME")
     admin_email: Union[str, None] = os.getenv("ADMIN_EMAIL")
     admin_password: Union[str, None] = os.getenv("ADMIN_PASSWORD")
-    theme_name: Union[str, None] = os.getenv("THEME_NAME")
+    theme_name: Union[str, None] = os.getenv("THEME_NAME", "core")
     start_date: Union[str, None] = os.getenv("START_DATE")
     start_time: Union[str, None] = os.getenv("START_TIME")
     end_date: Union[str, None] = os.getenv("END_DATE")

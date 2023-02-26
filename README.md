@@ -1,6 +1,6 @@
 # Automatically setup CTFd instance
 
-Just being lazy.
+Set environment variables. Run the script. Be lazy.
 
 ## Requirements
 
@@ -10,18 +10,30 @@ Just being lazy.
 ## Installation
 
 1. Clone the repository and change it to your working directory.
-
   ```console
   $ poetry install
   $ source `poetry env info --path`/bin/activate
   $ playwright install
   ```
 
-2. Set the required variables in a `.env` file (see `env.sample` at the root of the repository).
+2. Set the required variables in a `.env` file at the root of the repository.
+  ```console
+  EVENT_NAME=
+  EVENT_DESCRIPTION=
+  USER_MODE=   # 0 | 1
+  ADMIN_USERNAME=
+  ADMIN_EMAIL=
+  ADMIN_PASSWORD=
+  THEME_NAME=  # the only optional argument, default: "core"
+  START_DATE=  # "yyyy-mm-dd"
+  START_TIME=  # "hh:mm" in 24hrs format
+  END_DATE=    # "yyyy-mm-dd"
+  END_TIME=    # "hh:mm" in 24hrs format
+  ```
 
 ## Usage
 
-```sh
+```console
 ctfd_setup [-h] [-d] [--url URL] [-t TIMEOUT]
 
 Automatically setup CTFd instance.
