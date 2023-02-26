@@ -1,0 +1,54 @@
+[tool.poetry]
+name = "ctfd-setup"
+version = "1.0.0"
+description = "Automatically setup CTFd instance."
+authors = ["mboivin <mboivin@student.42.fr>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+coloredlogs = "^15.0.1"
+playwright = "^1.31.0"
+python-dotenv = "^1.0.0"
+verboselogs = "^1.7"
+
+[tool.poetry.group.dev.dependencies]
+bandit = "^1.7.4"
+black = "^23.1.0"
+isort = "^5.12.0"
+pre-commit = "^3.1.0"
+pycodestyle = "^2.10.0"
+pylint = "^2.16.2"
+
+[tool.black]
+line-length = 79
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.mypy]
+pretty = true
+show_traceback = true
+color_output = true
+strict = true
+ignore_missing_imports = true
+allow_untyped_decorators = true
+allow_subclassing_any = true
+
+[tool.poetry.scripts]
+ctfd_setup = 'ctfd_setup.main:entrypoint'
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

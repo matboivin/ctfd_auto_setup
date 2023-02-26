@@ -1,0 +1,6 @@
+bandit
+black
+isort
+pre-commit
+pycodestyle
+pylint
