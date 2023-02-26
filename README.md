@@ -17,14 +17,14 @@ Set environment variables. Run the script. Be lazy.
   ```
 
 2. Set the required variables in a `.env` file at the root of the repository.
-  ```console
+  ```
   EVENT_NAME=
   EVENT_DESCRIPTION=
   USER_MODE=   # 0 | 1
   ADMIN_USERNAME=
   ADMIN_EMAIL=
   ADMIN_PASSWORD=
-  THEME_NAME=  # the only optional argument, default: "core"
+  THEME_NAME=  # the only optional parameter, default: "core"
   START_DATE=  # "yyyy-mm-dd"
   START_TIME=  # "hh:mm" in 24hrs format
   END_DATE=    # "yyyy-mm-dd"
