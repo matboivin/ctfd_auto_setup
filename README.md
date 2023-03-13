@@ -10,13 +10,19 @@ Set environment variables. Run the script. Be lazy.
 ## Installation
 
 1. Clone the repository and change it to your working directory.
+
+2. Install the project:
   ```console
   $ poetry install
+  ```
+ 
+3. Activate the virtual environment and install the web browsers:
+  ```console
   $ source `poetry env info --path`/bin/activate
   $ playwright install
   ```
 
-2. Set the required variables in a `.env` file at the root of the repository.
+4. Set the required variables in a `.env` file at the root of the repository.
   ```
   EVENT_NAME=
   EVENT_DESCRIPTION=
@@ -45,6 +51,17 @@ optional arguments:
   -t TIMEOUT, --timeout TIMEOUT
                         default maximum navigation time in milliseconds (default: 30000)
 ```
+
+1. Activate the virtual environment:
+  ```console
+  $ source `poetry env info --path`/bin/activate
+  ```
+
+2. Run the project:
+
+  ```console
+  $ ctfd_setup
+  ```
 
 # Credits
 
