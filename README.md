@@ -4,8 +4,8 @@ Set environment variables. Run the script. Be lazy.
 
 ## Requirements
 
-* Python 3.9 or greater
-* [`poetry`](https://python-poetry.org)
+* Python >= 3.9
+* [`Poetry`](https://python-poetry.org)
 
 ## Installation
 
@@ -16,13 +16,17 @@ Set environment variables. Run the script. Be lazy.
   $ poetry install
   ```
  
-3. Activate the virtual environment and install the web browsers:
+3. Activate the virtual environment:
   ```console
-  $ source `poetry env info --path`/bin/activate
+  $ poetry shell
+  ```
+
+4. Install the web browsers:
+  ```console
   $ playwright install
   ```
 
-4. Set the required variables in a `.env` file at the root of the repository.
+5. Set the required variables in a `.env` file at the root of the repository.
   ```
   EVENT_NAME=
   EVENT_DESCRIPTION=
@@ -54,7 +58,7 @@ optional arguments:
 
 1. Activate the virtual environment:
   ```console
-  $ source `poetry env info --path`/bin/activate
+  $ poetry shell
   ```
 
 2. Run the project:
