@@ -7,6 +7,8 @@ from typing import Union
 
 @dataclass
 class Configuration:
+    """Class grouping configuration values."""
+
     event_name: str
     event_description: str
     user_mode: int
@@ -25,7 +27,7 @@ def get_configuration() -> Configuration:
 
     Parameters
     ----------
-    logger : VerboseLogger
+    logger : verboselogs.VerboseLogger
         The program's logger.
     page : playwright.sync_api.Page
         The page opened in browser.
@@ -53,7 +55,7 @@ def get_configuration() -> Configuration:
     end_date: Union[str, None] = os.getenv("END_DATE")
     end_time: Union[str, None] = os.getenv("END_TIME")
 
-    if not all(
+    if all(
         [
             event_name,
             event_description,
@@ -68,21 +70,21 @@ def get_configuration() -> Configuration:
             end_time,
         ]
     ):
-        raise RuntimeError(
-            "Missing informations. Ensure you set every required variables in "
-            "the .env file."
+        return Configuration(
+            event_name,
+            event_description,
+            int(user_mode),
+            admin_username,
+            admin_email,
+            admin_password,
+            theme_name,
+            start_date,
+            start_time,
+            end_date,
+            end_time,
         )
 
-    return Configuration(
-        event_name,
-        event_description,
-        int(user_mode),
-        admin_username,
-        admin_email,
-        admin_password,
-        theme_name,
-        start_date,
-        start_time,
-        end_date,
-        end_time,
+    raise RuntimeError(
+        "Missing informations. Ensure you set every required variables in "
+        "the .env file."
     )

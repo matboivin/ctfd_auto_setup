@@ -20,32 +20,6 @@ pre-commit = "^3.1.0"
 pycodestyle = "^2.10.0"
 pylint = "^2.16.2"
 
-[tool.black]
-line-length = 79
-include = '\.pyi?$'
-exclude = '''
-/(
-    \.git
-  | \.hg
-  | \.mypy_cache
-  | \.tox
-  | \.venv
-  | _build
-  | buck-out
-  | build
-  | dist
-)/
-'''
-
-[tool.mypy]
-pretty = true
-show_traceback = true
-color_output = true
-strict = true
-ignore_missing_imports = true
-allow_untyped_decorators = true
-allow_subclassing_any = true
-
 [tool.poetry.scripts]
 ctfd_setup = 'ctfd_setup.main:entrypoint'
 

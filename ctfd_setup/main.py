@@ -20,14 +20,14 @@ from .pages import (
 )
 
 
-def setup_instance(
+def fill_installation(
     logger: VerboseLogger, configuration: Configuration, page: Page
 ) -> None:
     """Fill setup's fields automatically.
 
     Parameters
     ----------
-    logger : VerboseLogger
+    logger : verboselogs.VerboseLogger
         The program's logger.
     configuration : Configuration
         The information to setup the CTFd instance.
@@ -46,18 +46,18 @@ def setup_instance(
     logger.info("Done.")
 
 
-def main(
+def setup_instance(
     logger: VerboseLogger, configuration: Configuration, args: Namespace
 ) -> None:
     """Open web browser and page.
 
     Parameters
     ----------
-    logger : VerboseLogger
+    logger : verboselogs.VerboseLogger
         The program's logger.
     configuration : Configuration
         The information to setup the CTFd instance.
-    argparse.Namespace
+    args : argparse.Namespace
         The program's arguments.
 
     """
@@ -79,7 +79,7 @@ def main(
         page.set_default_timeout(args.timeout)
         page.goto(args.url)
 
-        setup_instance(logger, configuration, page)
+        fill_installation(logger, configuration, page)
 
     except PlaywrightTimeoutError as err:
         logger.error(err)
@@ -90,7 +90,7 @@ def main(
         playwright.stop()
 
 
-def entrypoint() -> None:
+def main() -> None:
     """Program's entrypoint."""
     args: Namespace = parse_args()
     logger: VerboseLogger = VerboseLogger("ctfd_setup")
@@ -104,7 +104,7 @@ def entrypoint() -> None:
     try:
         configuration: Configuration = get_configuration()
 
-        main(logger, configuration, args)
+        setup_instance(logger, configuration, args)
 
     except RuntimeError as err:
         logger.error(err)
@@ -114,4 +114,4 @@ def entrypoint() -> None:
 
 
 if __name__ == "__main__":
-    entrypoint()
+    main()

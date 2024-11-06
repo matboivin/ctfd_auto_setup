@@ -1,6 +1,5 @@
 """Automatically fill page's fields."""
 
-
 from playwright.sync_api import Page
 from verboselogs import VerboseLogger
 
@@ -14,7 +13,7 @@ def fill_general_page(
 
     Parameters
     ----------
-    logger : VerboseLogger
+    logger : verboselogs.VerboseLogger
         The program's logger.
     configuration : Configuration
         The information to setup the CTFd instance.
@@ -38,7 +37,7 @@ def fill_mode_page(
 
     Parameters
     ----------
-    logger : VerboseLogger
+    logger : verboselogs.VerboseLogger
         The program's logger.
     configuration : Configuration
         The information to setup the CTFd instance.
@@ -61,7 +60,7 @@ def fill_administration_page(
 
     Parameters
     ----------
-    logger : VerboseLogger
+    logger : verboselogs.VerboseLogger
         The program's logger.
     configuration : Configuration
         The information to setup the CTFd instance.
@@ -90,7 +89,7 @@ def select_ctf_theme(
 
     Parameters
     ----------
-    logger : VerboseLogger
+    logger : verboselogs.VerboseLogger
         The program's logger.
     configuration : Configuration
         The information to setup the CTFd instance.
@@ -111,7 +110,7 @@ def set_date_and_time(
 
     Parameters
     ----------
-    logger : VerboseLogger
+    logger : verboselogs.VerboseLogger
         The program's logger.
     configuration : Configuration
         The information to setup the CTFd instance.
